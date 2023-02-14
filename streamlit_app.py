@@ -69,11 +69,17 @@ st.write("## Age-specific cancer mortality rates")
 
 ### P2.1 ###
 # replace with st.slider
-year = 2012
-subset = df[df["Year"] == year]
+#year = 2012
+#subset = df[df["Year"] == year]
 ### P2.1 ###
 
+o=st.slider("Year",min_value=df["Year"].min(),   max_value=df["Year"].max())
 
+st.write("Year is: ", o)
+
+
+## Source: 
+## https://docs.streamlit.io/library/api-reference/widgets/st.slider
 
 
 ### P2.2 ###
