@@ -45,11 +45,7 @@ st.write("## Age-specific cancer mortality rates")
 #subset = df[df["Year"] == year]
 ### P2.1 ###
 
-o=st.slider("Year",
-            min_value=df["Year"].min(),    ### minimum Year
-            max_value=df["Year"].max(),    ### Maximum Year 
-            value=2012 ### default Year
-            )
+o=st.slider("Year", min_value=min(df["Year"]), max_value=max(df["Year"]),  value=2012 )
 
 
 ## Sources Consulted: 
@@ -63,10 +59,7 @@ o=st.slider("Year",
 ### P2.2 ###
 
 
-radio=st.radio("Sex",
-                options=list((df["Sex"].unique()[-1], df["Sex"].unique()[0])),  ### [M, F]
-                index=0 ### Setting first element as default, like in the provided demo
-                )
+radio=st.radio("Sex", options=list((df["Sex"].unique()[-1], df["Sex"].unique()[0])), index=0)
 
 ### Sources Consulted:
 ### https://docs.streamlit.io/library/api-reference/widgets/st.radio
@@ -89,10 +82,8 @@ countries = [
 #subset = subset[subset["Country"].isin(countries)]
 ### P2.3 ###
 
-countries_select=st.multiselect("Countries",    
-                                options=df["Country"].unique(),  
-                                default=countries ## hard-coded values below as as `default` for selector
-                                )
+countries_select=st.multiselect("Countries", options=df["Country"].unique(),   default=countries)
+                                
 
 
 ### Sources Consulted:
@@ -105,9 +96,7 @@ countries_select=st.multiselect("Countries",
 #subset = subset[subset["Cancer"] == cancer]
 ### P2.4 ###
 
-select_box=st.selectbox("Cancer", 
-                        options=df["Cancer"].unique()
-                        )
+select_box=st.selectbox("Cancer", options=df["Cancer"].unique())
 
 
 ### Sources Consulted:
