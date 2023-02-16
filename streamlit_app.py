@@ -126,7 +126,7 @@ subset=df[(df["Country"].isin(countries_select)) & (df["Year"]==(o)) & (df["Canc
 chart = alt.Chart(subset).mark_rect().encode(
     x=alt.X("Age:O", sort=ages, axis=alt.Axis(grid=False, domain=False)), ### X Axis 
     color=alt.Color("Rate:Q",title="Mortality rate per 100k", scale=alt.Scale(type='log', domain=(0.01, 100), clamp=True), legend=alt.Legend()), ### Adapted from Problem Set 3 Notes
-    y=alt.Y("Country:N", title="Country:N", axis=alt.Axis(grid=False,  domain=False)), ### Y axis 
+    y=alt.Y("Country:N", title="Country", axis=alt.Axis(grid=False,  domain=False)), ### Y axis 
     tooltip=["Rate:Q"], ### tolltip
    # stroke=alt.Stroke("Rate:Q",title="Mortality rate per 100k", scale=alt.Scale(type='log', domain=(0.01, 100), clamp=True),   fi)
    # fill=alt.Fill("Rate:Q", title="Mortality rate per 100k", scale=alt.Scale(type='log', domain=(0.01, 100), clamp=True)),
